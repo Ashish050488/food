@@ -541,7 +541,7 @@ const resList= [
         "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
     },
     {
-        "id": "602137",
+        "id": "6021379",
         "name": "Big Bowl",
         "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/22/deff0d02-ca1d-4ef9-9d62-b0cbeabf33d3_602137.JPG",
         "locality": "Sector 7",
