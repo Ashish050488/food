@@ -23,6 +23,11 @@
     margin: 10px;
     font-size: 24px;
 }
+.nav-items>ul>button{
+    padding:0 20px;
+    font-size: 15px;
+    border-radius: 5px;
+}
 
 
 .res-container{
@@ -64,3 +69,4 @@
     font-size: 15px;
     font-family: "itallic";
 }
+
