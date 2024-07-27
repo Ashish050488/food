@@ -15,10 +15,10 @@ const Header = ()=>{
         </div>
         <div className="nav-items">
             <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About Us</Link></li>
-                <li><Link to="/contact">Contact</Link></li>
-                <li><Link to="/cart">Cart</Link></li>
+                <li><Link className="header-option" to="/">Home</Link></li>
+                <li><Link className="header-option" to="/about">About Us</Link></li>
+                <li><Link className="header-option" to="/contact">Contact</Link></li>
+                <li><Link className="header-option" to="/cart">Cart</Link></li>
                 <button className="login" onClick={()=>{
                    btnName ==="Login" ? SetbtnName("Logout") :SetbtnName("Login")
                 }} >{btnName}</button>

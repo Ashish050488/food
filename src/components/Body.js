@@ -2,6 +2,7 @@ import RestaurentCard from "./RestaurentCard";
 import { useEffect, useState } from "react";
 import CircularColor from "./CircularColor";
 import { Swiggy_API } from "../utils/constant";
+import { Link } from "react-router-dom";
 
 const Body = ()=>{
 
@@ -60,7 +61,7 @@ const Body = ()=>{
         </div>
         <div className="res-container">
             {filteredRestaurants.map((restaurant) => (
-                <RestaurentCard key={restaurant.info.id} resData={restaurant} />
+                <Link className="card-link" key={restaurant.info.id} to={"/restaurants/"+restaurant.info.id}><RestaurentCard resData={restaurant} /></Link>
             ))}
         </div>
         
