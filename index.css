@@ -90,5 +90,9 @@
 }
 .header-option{
     text-decoration: none;
-    color: black;
+    color: blackaa;
+}
+.user-card{
+    padding: 10px;
+    border: 1px solid black;
 }
