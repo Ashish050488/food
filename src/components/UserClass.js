@@ -7,28 +7,63 @@ class UserClass extends React.Component{
         super(props);
 
         this.state={
-            count:0,
+            userInfo:{
+                name:"Jhon Doe",
+                location:"Default"
+            },
         };
-        //state variable is big object
     };
-
+    async componentDidMount(){
+        const data =  await fetch("https://api.github.com/users/ashish050488");
+        const json = await data.json()
+        this.setState({
+            userInfo:json,
+        })
+        console.log(json);
+    };
+    
+    
     render(){
-        const {name,location} = this.props
-        const{count}=this.state
+        const {name,location,avatar_url} = this.state.userInfo
         return(
             <div className="user-card">
-                <h1>count:{count}</h1>
-                <button onClick={()=>{
-                    //Never updatestate variable directly Never do this
-                    this.setState({
-                        count :this.state.count+1
-                    })
-                }}>Count Increase</button>
+               
+                <img src={avatar_url} />
                 <h1>Name:{name}</h1>
                 <h2>Location:{location}</h2>
-                <h2>Location:@akakaka</h2>
             </div>
         );
     };
 };
-export default UserClass
+export default UserClass;
+
+/* In Class Based Component
+   -Never updatestate variable directly Never do this
+   -State variable is big object
+   -This is used for calling Api as it is called after the DOM is updated
+
+*/
+
+/** 
+ * ---Mounting---
+ * 
+ * Constructor(Dummy)
+ * Render(dummy)
+ *      <HTML dummy>
+ * ComponentDidMount
+ *      <API Call>
+ *      <This.setState> -->Set variable is updated
+ * 
+ * ----UPDATE
+ *  
+ *      render(API data)
+ *      <HTML new API data>
+ * 
+ * ComponentDidUpdate
+ * 
+ * 
+ * Never ever compare react lifeCycle method to functional component
+ * 
+ * 
+*/
+

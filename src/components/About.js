@@ -9,20 +9,52 @@ class About extends React.Component{
 
     constructor(props){
         super(props)
+
+        console.log("Parent Constructor");
+    }
+
+    componentDidMount(){
+      
+      
+      console.log("Parent COmponentDidMount");
     }
 
     render(){
+        console.log("Parent Render");
         return(
             <div>
                 <h1>About Us</h1>
                 <h2>This is me</h2>
                 {/*<User name={"Ashish (from function)"} /> } {/*this is functional*/}
-                <UserClass name={"Ashish (from class)"} location={"Bihar"} />
+                <UserClass  />
             </div>
         ) 
     }
 
 
-}
+};
 
-export default About
+export default About;
+
+/*
+-Parent Constructor
+-Parent Render
+    
+
+    -First constructor
+    -Forset Render
+
+    -Second constructor
+    -Second Render
+
+    <DOM UPDATED IN SINGLE BATCH>
+
+    -First ComponentDidMount
+    -Second ComponentDidMount
+
+-Parent ComponentDidMount
+
+
+-There is another method which is called after Parent ComponentDidMount which is ComponentDidUpdate
+
+*/
