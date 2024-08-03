@@ -1,24 +1,13 @@
 
-import { useState,useEffect } from "react";
 import CircularColor from "./CircularColor";
-import { Menu_API } from "../utils/constant";
-import { useParams,Link } from "react-router-dom";
+import { useParams} from "react-router-dom";
+import useRestaurantMenu from'../utils/useRestaurantMenu'
 
 
 const RestaurantMenu = ()=>{
-    const [ResInfo,setResInfo]=useState(null);
     const {resId} = useParams();
-    useEffect(()=>{
-        fetchMenu();
-    },[]);
-    
-    const fetchMenu = async ()=>{
-        const data = await fetch(Menu_API+resId);
-        console.log(data);
-        const json = await data.json();
-        setResInfo(json.data)
-    };
-    
+    const ResInfo = useRestaurantMenu(resId);
+
     if (ResInfo === null) return (<CircularColor/>);
     
     // console.log( ResInfo?.cards[2]?.card?.card?.info)

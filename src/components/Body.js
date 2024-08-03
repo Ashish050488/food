@@ -3,36 +3,22 @@ import { useEffect, useState } from "react";
 import CircularColor from "./CircularColor";
 import { Swiggy_API } from "../utils/constant";
 import { Link } from "react-router-dom";
+import useListofRestaurants from "../utils/useListofRestaurants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = ()=>{
 
-    const [ListOfRestaurnt, setListOfRestaurent] = useState([]);
-    const [filteredRestaurants,setfilteresRestaurants] = useState([])
+    const ListOfRestaurnt= filteredRestaurants = useListofRestaurants();
+    // const filteredRestaurants= useListofRestaurants();
+    
 
     const [searchText,setsearchText] = useState("")
-
-
-
-    // whenever state variables update, react triggers a reconciliation cycle(re-render the  component);
-
-    // console.log("body rendered");
-    useEffect(()=>{
-        fetchData();
-        // console.log(setListOfRestaurent);
-    },[]);
+    const OnlineStatus = useOnlineStatus();
     
-    const fetchData = async ()=>{
-        const data = await fetch(Swiggy_API);
-        const json = await data.json();
-        // console.log(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0]);
+
     
-        // optional chaining operator (?) is used to avoid errors if the property is not found it will return undefined instead of an error. and in UI we can use optional chaining operator to avoid errors.
-        setListOfRestaurent(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setfilteresRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    };
-
-
-
+    
+    if(OnlineStatus===false) return (<h1>Looks like you are offline Check you online Status</h1>)
     // conditional Rendering with terniary operator
     return ListOfRestaurnt.length===0 ? (<CircularColor/>): (
         <div className="body">
