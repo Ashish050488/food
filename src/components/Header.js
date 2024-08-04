@@ -21,6 +21,7 @@ const Header = ()=>{
                 <li><Link className="header-option" to="/">Home</Link></li>
                 <li><Link className="header-option" to="/about">About Us</Link></li>
                 <li><Link className="header-option" to="/contact">Contact</Link></li>
+                <li><Link className="header-option" to="/grocery">Grocery</Link></li>
                 <li><Link className="header-option" to="/cart">Cart</Link></li>
                 <button className="login" onClick={()=>{
                    btnName ==="Login" ? SetbtnName("Logout") :SetbtnName("Login")

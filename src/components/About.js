@@ -9,13 +9,13 @@ class About extends React.Component{
 
     constructor(props){
         super(props)
-
         console.log("Parent Constructor");
-    }
+    };
+    
 
     componentDidMount(){
-      
-      
+
+
       console.log("Parent COmponentDidMount");
     }
 
@@ -28,7 +28,7 @@ class About extends React.Component{
                 {/*<User name={"Ashish (from function)"} /> } {/*this is functional*/}
                 <UserClass  />
             </div>
-        ) 
+        )
     }
 
 
@@ -39,7 +39,7 @@ export default About;
 /*
 -Parent Constructor
 -Parent Render
-    
+
 
     -First constructor
     -Forset Render

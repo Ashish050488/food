@@ -1,5 +1,5 @@
 import RestaurentCard from "./RestaurentCard";
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import CircularColor from "./CircularColor";
 import { Swiggy_API } from "../utils/constant";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ import useListofRestaurants from "../utils/useListofRestaurants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = ()=>{
+    
 
     const ListOfRestaurnt= filteredRestaurants = useListofRestaurants();
     // const filteredRestaurants= useListofRestaurants();
